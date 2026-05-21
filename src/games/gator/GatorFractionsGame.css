@@ -1,0 +1,330 @@
+.gator-game {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.gator-game__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.gator-game__back {
+  min-height: 36px;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background: var(--color-bg);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.gator-game__header h1 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.gator-game__header-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+.gator-game__pick-art {
+  min-height: 32px;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid #81c784;
+  border-radius: 0.45rem;
+  background: #e8f5e9;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--game-accent, #2d6a4f);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.gator-game__progress {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--game-accent, #2d6a4f);
+}
+
+.gator-game__prompt {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.45;
+  background: #e8f5e9;
+  color: var(--color-text);
+}
+
+.gator-game__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.gator-game__row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.gator-game__frac {
+  flex: 1;
+  min-width: 0;
+  transition: transform 0.2s ease;
+}
+
+.gator-game__frac--chomped {
+  animation: gator-frac-chomped 0.5s ease-in-out 2;
+}
+
+@keyframes gator-frac-chomped {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(0.94);
+  }
+  55% {
+    transform: scale(0.97);
+  }
+}
+
+.gator-game__center {
+  flex-shrink: 0;
+  width: 5.5rem;
+  height: 5.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px dashed #81c784;
+  background: #f1f8e9;
+}
+
+.gator-game__center--filled {
+  border-style: solid;
+  border-color: var(--game-accent, #2d6a4f);
+}
+
+.gator-game__center--correct {
+  border-color: var(--color-success);
+  background: #e8f8f0;
+}
+
+.gator-game__center--wrong {
+  border-color: #c0392b;
+  background: #fdecea;
+}
+
+.gator-game__center--chomp-left {
+  animation: gator-center-lunge-left 0.65s ease-out forwards;
+}
+
+.gator-game__center--chomp-right {
+  animation: gator-center-lunge-right 0.65s ease-out forwards;
+}
+
+@keyframes gator-center-lunge-left {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  30% {
+    transform: translate(-32px, 0) scale(1.18);
+  }
+  50% {
+    transform: translate(-26px, -3px) scale(1.14);
+  }
+  70% {
+    transform: translate(-30px, 0) scale(1.12);
+  }
+  100% {
+    transform: translate(-24px, 0) scale(1.1);
+  }
+}
+
+@keyframes gator-center-lunge-right {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  30% {
+    transform: translate(32px, 0) scale(1.18);
+  }
+  50% {
+    transform: translate(26px, -3px) scale(1.14);
+  }
+  70% {
+    transform: translate(30px, 0) scale(1.12);
+  }
+  100% {
+    transform: translate(24px, 0) scale(1.1);
+  }
+}
+
+.gator-game__choice--chomp {
+  animation: gator-choice-chomp 0.55s ease-in-out 2;
+}
+
+@keyframes gator-choice-chomp {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.06);
+  }
+}
+
+.gator-game__center-hint {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #81c784;
+}
+
+.gator-game__legend {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.gator-game__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gator-game__choices {
+  display: flex;
+  gap: 0.65rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.gator-game__choice {
+  flex: 1;
+  max-width: 130px;
+  min-height: 110px;
+  padding: 0.65rem 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  border: 3px solid var(--game-accent, #2d6a4f);
+  border-radius: 1rem;
+  background: var(--color-surface);
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: transform 0.12s ease;
+}
+
+.gator-game__choice:active {
+  transform: scale(0.97);
+}
+
+.gator-game__choice-caption {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-muted);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.gator-game__choice-symbol {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--game-accent, #2d6a4f);
+}
+
+.gator-game__choice--picked {
+  background: #e8f5e9;
+}
+
+.gator-game__choice--correct {
+  border-color: var(--color-success);
+  background: #e8f8f0;
+}
+
+.gator-game__choice--wrong {
+  border-color: #c0392b;
+  background: #fdecea;
+}
+
+.gator-game__choice:disabled {
+  cursor: default;
+}
+
+.gator-game__primary {
+  min-height: 48px;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 0.75rem;
+  background: var(--game-accent, #2d6a4f);
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.gator-game__secondary {
+  min-height: 44px;
+  padding: 0.5rem 1.25rem;
+  border: 2px solid var(--color-border);
+  border-radius: 0.75rem;
+  background: var(--color-surface);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.gator-game__done {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.gator-game__done-gator {
+  margin: 0 auto;
+}
+
+.gator-game__done h2 {
+  margin: 0;
+}
+
+.gator-game__done-tip {
+  margin: 0;
+  max-width: 22rem;
+  color: var(--color-muted);
+  line-height: 1.45;
+  font-size: 0.95rem;
+}

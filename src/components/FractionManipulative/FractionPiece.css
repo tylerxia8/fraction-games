@@ -1,0 +1,51 @@
+.fraction-piece {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid transparent;
+  border-radius: 0.625rem;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.fraction-piece--half {
+  width: 100%;
+  min-height: 72px;
+  background: linear-gradient(135deg, #5ba3d9 0%, #3d8cc4 100%);
+  color: #fff;
+}
+
+.fraction-piece--quarter {
+  width: 100%;
+  min-height: 52px;
+  background: linear-gradient(135deg, #8ecae6 0%, #6bb8e0 100%);
+  color: #0d3d56;
+}
+
+.fraction-piece--compact.fraction-piece--half {
+  min-height: 56px;
+}
+
+.fraction-piece--compact.fraction-piece--quarter {
+  min-height: 44px;
+}
+
+.fraction-piece--selected {
+  border-color: #f4a261;
+  box-shadow: 0 0 0 4px rgba(244, 162, 97, 0.35);
+  transform: scale(1.02);
+}
+
+.fraction-piece:active {
+  transform: scale(0.98);
+}
+
+.fraction-piece__label {
+  pointer-events: none;
+}

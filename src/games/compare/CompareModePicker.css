@@ -1,0 +1,108 @@
+.compare-mode {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.compare-mode__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.compare-mode__back {
+  min-height: 36px;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background: var(--color-bg);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.compare-mode__header h1 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.compare-mode__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.25rem 1rem;
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.compare-mode__blurb {
+  margin: 0;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--color-muted);
+}
+
+.compare-mode__prompt {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.compare-mode__choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.compare-mode__choice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  width: 100%;
+  min-height: 88px;
+  padding: 1rem 1.1rem;
+  border: 3px solid var(--game-accent, var(--color-accent));
+  border-radius: 1rem;
+  background: var(--color-surface);
+  text-align: left;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: transform 0.12s ease;
+}
+
+.compare-mode__choice:active {
+  transform: scale(0.98);
+}
+
+.compare-mode__choice-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.compare-mode__choice-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--game-accent, var(--color-accent));
+}
+
+.compare-mode__choice-desc {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--color-muted);
+  font-weight: 500;
+}

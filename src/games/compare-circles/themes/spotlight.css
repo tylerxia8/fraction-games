@@ -1,0 +1,139 @@
+/* Spotlight Show — stage spotlights on circles */
+
+.compare-circles-game[data-game-theme='spotlight'] {
+  background: radial-gradient(ellipse at 50% 0%, #3d2c5c 0%, #1a1028 45%, #0d0814 100%);
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .compare-game__header {
+  background: #1a1028;
+  border-bottom: 3px solid #ffc107;
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .compare-game__header h1,
+.compare-circles-game[data-game-theme='spotlight'] .compare-game__back {
+  color: #fff8e1;
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .compare-game__back {
+  border-color: rgba(255, 193, 7, 0.45);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .compare-game__prompt {
+  background: #2a1f3d;
+  color: #ffe082;
+  border-bottom: 2px solid #ffc107;
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .compare-game__timer,
+.compare-circles-game[data-game-theme='spotlight'] .compare-game__progress {
+  color: #ffc107;
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .circle-frac__rim {
+  fill: #1e1528;
+  stroke: #ffc107;
+  stroke-width: 4;
+  filter: drop-shadow(0 0 8px rgba(255, 193, 7, 0.4));
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .circle-frac__slice {
+  fill: #2a2038;
+  stroke: #5c4d6e;
+  stroke-width: 2;
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .circle-frac__slice--filled {
+  fill: #ffd54f;
+  stroke: #ffc107;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 6px rgba(255, 213, 79, 0.7));
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .circle-frac__spoke {
+  stroke: #ffe082;
+  stroke-width: 2.5;
+  opacity: 0.9;
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .compare-game__symbol {
+  border-color: #ffc107;
+  color: #ffe082;
+  background: #1e1528;
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .compare-game__slot {
+  border-color: #ffc107;
+  background: #2a1f3d;
+  color: #ffe082;
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .compare-game__primary {
+  background: linear-gradient(135deg, #f9a825, #ffc107);
+  color: #1a1028;
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .compare-mode {
+  background: radial-gradient(ellipse at 50% 0%, #3d2c5c, #1a1028);
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .compare-mode__blurb,
+.compare-circles-game[data-game-theme='spotlight'] .compare-mode__prompt {
+  color: #ffe082;
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .compare-mode__header {
+  background: #1a1028;
+  border-bottom-color: #ffc107;
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .compare-mode__header h1,
+.compare-circles-game[data-game-theme='spotlight'] .compare-mode__back {
+  color: #fff8e1;
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .compare-mode__back {
+  border-color: rgba(255, 193, 7, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .circle-frac__label {
+  color: #ffe082;
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .compare-game__done h2 {
+  color: #ffe082;
+}
+
+/* Green / red comparison symbol feedback */
+.compare-circles-game[data-game-theme='spotlight'] .compare-game__slot--correct {
+  border-color: #15803d;
+  border-width: 3px;
+  border-style: solid;
+  color: #fff;
+  background: #22c55e;
+  box-shadow: 0 0 14px rgba(34, 197, 94, 0.55);
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .compare-game__slot--wrong {
+  border-color: #b91c1c;
+  border-width: 3px;
+  border-style: solid;
+  color: #fff;
+  background: #ef4444;
+  box-shadow: 0 0 14px rgba(239, 68, 68, 0.5);
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .compare-game__symbol--correct {
+  border-color: #15803d;
+  color: #fff;
+  background: #22c55e;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.45);
+}
+
+.compare-circles-game[data-game-theme='spotlight'] .compare-game__symbol--wrong {
+  border-color: #b91c1c;
+  color: #fff;
+  background: #ef4444;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.45);
+}

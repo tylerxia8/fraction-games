@@ -1,0 +1,64 @@
+.circle-frac {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.circle-frac__svg {
+  width: 100%;
+  max-width: 168px;
+  height: auto;
+  display: block;
+}
+
+.circle-frac__rim {
+  fill: var(--color-bg);
+  stroke: var(--color-border);
+  stroke-width: 2;
+}
+
+.circle-frac__slice {
+  fill: color-mix(in srgb, var(--circle-accent) 18%, var(--color-surface));
+  stroke: none;
+}
+
+.circle-frac__slice--filled {
+  fill: var(--circle-accent);
+}
+
+.circle-frac__spoke {
+  stroke: var(--color-border);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+.circle-frac__label {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--color-text);
+}
+
+.circle-frac__slash {
+  display: block;
+  width: 1.75rem;
+  height: 2px;
+  margin: 0.15rem 0;
+  background: var(--color-text);
+  border-radius: 1px;
+}
+
+.circle-frac--left .circle-frac__slice--filled {
+  filter: none;
+}
+
+.compare-circles-game .compare-game__row {
+  align-items: center;
+}

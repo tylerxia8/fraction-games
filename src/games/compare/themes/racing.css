@@ -1,0 +1,123 @@
+/* Racing Fractions */
+
+.compare-racing-game[data-game-theme='racing'] {
+  background: linear-gradient(180deg, #1a1a2e 0%, #2d2d44 35%, #e8e8e8 100%);
+}
+
+.compare-racing-game[data-game-theme='racing'] .compare-game__header {
+  background: #1a1a2e;
+  border-bottom: 4px solid #e63946;
+}
+
+.compare-racing-game[data-game-theme='racing'] .compare-game__header h1,
+.compare-racing-game[data-game-theme='racing'] .compare-game__back {
+  color: #fff;
+}
+
+.compare-racing-game[data-game-theme='racing'] .compare-game__back {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.compare-racing-game[data-game-theme='racing'] .compare-game__prompt {
+  background: repeating-linear-gradient(
+    -45deg,
+    #fff 0 8px,
+    #f5f5f5 8px 16px
+  );
+  color: #1a1a2e;
+  border-bottom: 3px solid #e63946;
+}
+
+.compare-racing-game[data-game-theme='racing'] .compare-game__timer {
+  color: #e63946;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.compare-racing-game[data-game-theme='racing'] .compare-game__progress {
+  color: #fff;
+}
+
+.compare-racing-game[data-game-theme='racing'] .compare-game__symbol {
+  border-color: #1a1a2e;
+  color: #1a1a2e;
+  background: #fff;
+  font-weight: 800;
+}
+
+.compare-racing-game[data-game-theme='racing'] .compare-game__slot {
+  border-color: #e63946;
+  background: linear-gradient(180deg, #fff, #ffe8e8);
+  color: #c1121f;
+}
+
+.compare-racing-game[data-game-theme='racing'] .frac-display__value {
+  color: #1a1a2e;
+}
+
+.compare-racing-game[data-game-theme='racing'] .compare-game__primary {
+  background: linear-gradient(135deg, #c1121f, #e63946);
+}
+
+.compare-racing-game[data-game-theme='racing'] .compare-mode {
+  background: linear-gradient(180deg, #1a1a2e, #e8e8e8);
+}
+
+.compare-racing-game[data-game-theme='racing'] .compare-mode__header {
+  background: #1a1a2e;
+  border-bottom-color: #e63946;
+}
+
+.compare-racing-game[data-game-theme='racing'] .compare-mode__header h1,
+.compare-racing-game[data-game-theme='racing'] .compare-mode__back {
+  color: #fff;
+}
+
+.compare-racing-game[data-game-theme='racing'] .compare-mode__back {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.compare-racing-game[data-game-theme='racing'] .compare-mode__blurb,
+.compare-racing-game[data-game-theme='racing'] .compare-mode__prompt {
+  color: #1a1a2e;
+}
+
+/* Center slot: green / red comparison symbol */
+.compare-racing-game[data-game-theme='racing'] .compare-game__slot--correct {
+  border-color: #15803d;
+  border-width: 3px;
+  border-style: solid;
+  color: #fff;
+  background: #22c55e;
+  box-shadow: 0 0 14px rgba(34, 197, 94, 0.55);
+}
+
+.compare-racing-game[data-game-theme='racing'] .compare-game__slot--wrong {
+  border-color: #b91c1c;
+  border-width: 3px;
+  border-style: solid;
+  color: #fff;
+  background: #ef4444;
+  box-shadow: 0 0 14px rgba(239, 68, 68, 0.5);
+}
+
+/* Choice buttons: highlight picked answer green or red */
+.compare-racing-game[data-game-theme='racing'] .compare-game__symbol--correct {
+  border-color: #15803d;
+  color: #fff;
+  background: #22c55e;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.45);
+}
+
+.compare-racing-game[data-game-theme='racing'] .compare-game__symbol--wrong {
+  border-color: #b91c1c;
+  color: #fff;
+  background: #ef4444;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.45);
+}
+
+.compare-racing-game[data-game-theme='racing'] .compare-game__done--racing-finish {
+  position: relative;
+}

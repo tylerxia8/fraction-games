@@ -1,0 +1,58 @@
+/* Laser Align */
+
+.lesson-shell[data-game-theme='laser'] {
+  background: linear-gradient(180deg, #0a0e1a 0%, #12182b 40%, var(--color-bg) 100%);
+}
+
+.lesson-shell[data-game-theme='laser'] .lesson-shell__header {
+  background: #12182b;
+  border-bottom-color: #00b4d8;
+}
+
+.lesson-shell[data-game-theme='laser'] .lesson-shell__phase {
+  background: rgba(0, 180, 216, 0.15);
+  color: #00e5ff;
+}
+
+[data-game-theme='laser'].fraction-circle {
+  background: radial-gradient(circle at 50% 45%, #1a2340 0%, #0d1117 70%);
+}
+
+[data-game-theme='laser'] .fraction-circle__teach {
+  background: rgba(0, 180, 216, 0.12);
+  border-bottom-color: #00b4d8;
+}
+
+[data-game-theme='laser'] .fraction-circle__teach-text {
+  color: #e8f4ff;
+}
+
+[data-game-theme='laser'] .fraction-circle__rim {
+  fill: #0d1525;
+  stroke: #00b4d8;
+}
+
+[data-game-theme='laser'] .fraction-circle__divider,
+[data-game-theme='laser'] .fraction-circle__partition {
+  stroke: #00e5ff;
+}
+
+[data-game-theme='laser'] .fraction-circle__divider--aligned,
+[data-game-theme='laser'] .fraction-circle__partition--aligned {
+  stroke: #39ff14;
+  filter: drop-shadow(0 0 6px rgba(57, 255, 20, 0.5));
+}
+
+[data-game-theme='laser'] .fraction-circle__handle-knob {
+  background: #00b4d8 !important;
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.6);
+}
+
+[data-game-theme='laser'] .fraction-circle__smash--ready {
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+}
+
+[data-game-theme='laser'] .fraction-circle__tool {
+  border-color: #00b4d8;
+  color: #00b4d8;
+}

@@ -1,0 +1,473 @@
+.fraction-circle {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
+  background: var(--color-bg);
+}
+
+.fraction-circle__teach {
+  margin: 0;
+  padding: 1rem 1.25rem;
+  background: var(--color-tutor-bubble);
+  border-bottom: 3px solid var(--color-accent);
+}
+
+.fraction-circle__teach-text {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.45;
+  font-weight: 600;
+  color: var(--color-text);
+  text-align: center;
+  max-width: 36rem;
+  margin-inline: auto;
+}
+
+.fraction-circle__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem 1rem;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+.fraction-circle__choice {
+  min-height: 52px;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: 0.75rem;
+  background: var(--color-bg);
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.fraction-circle__choice:active {
+  background: var(--color-tutor-bubble);
+  border-color: var(--color-accent);
+}
+
+.fraction-circle__continue {
+  min-height: 52px;
+  border: none;
+  border-radius: 0.75rem;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.fraction-circle__stage {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  min-height: 280px;
+}
+
+/* Level 1 */
+.fraction-circle__slice--l1-left {
+  fill: #a8d4ec;
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.fraction-circle__slice--l1-right {
+  fill: #fcd9b8;
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.fraction-circle__stage--aligned .fraction-circle__slice--l1-left {
+  fill: #5ba3d9;
+}
+
+.fraction-circle__stage--aligned .fraction-circle__slice--l1-right {
+  fill: #f4a261;
+}
+
+/* Level 2 — section fills only; fourths shown by rotating divider arms */
+.fraction-circle[data-level='2'] .fraction-circle__slice--s0,
+.fraction-circle[data-level='2'] .fraction-circle__slice--s1,
+.fraction-circle[data-level='2'] .fraction-circle__slice--s2,
+.fraction-circle[data-level='2'] .fraction-circle__slice--s3,
+.fraction-circle[data-level='2'] .fraction-circle__slice--annular {
+  stroke: none;
+}
+
+.fraction-circle__slice--s0 {
+  fill: #b8e0d2;
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.fraction-circle__slice--s1 {
+  fill: #d4c4f0;
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.fraction-circle__slice--s2 {
+  fill: #f9c9a8;
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.fraction-circle__stage--aligned .fraction-circle__slice--s0 {
+  fill: #7ec8a8;
+}
+
+.fraction-circle__stage--aligned .fraction-circle__slice--s1 {
+  fill: #b39ddb;
+}
+
+.fraction-circle__stage--aligned .fraction-circle__slice--s2 {
+  fill: #f4a261;
+}
+
+.fraction-circle__slice--s3 {
+  fill: #fff3b0;
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.fraction-circle__stage--aligned .fraction-circle__slice--s3 {
+  fill: #ffe066;
+}
+
+.fraction-circle__stage--merging .fraction-circle__half-wrap--left {
+  animation: merge-left 0.65s ease forwards;
+}
+
+.fraction-circle__stage--merging .fraction-circle__half-wrap--right {
+  animation: merge-right 0.65s ease forwards;
+}
+
+@keyframes merge-left {
+  to {
+    transform: translate(6px, 0);
+  }
+}
+
+@keyframes merge-right {
+  to {
+    transform: translate(-6px, 0);
+  }
+}
+
+.fraction-circle__stage--smashed .fraction-circle__svg {
+  animation: circle-pop 0.5s ease;
+}
+
+@keyframes circle-pop {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+.fraction-circle__svg {
+  width: min(100%, 360px);
+  height: auto;
+  max-height: 360px;
+  touch-action: none;
+}
+
+.fraction-circle__rim {
+  fill: var(--color-surface);
+  stroke: var(--color-border);
+  stroke-width: 3;
+}
+
+.fraction-circle__half-caption {
+  font-size: 14px;
+  font-weight: 700;
+  fill: var(--color-muted);
+}
+
+.fraction-circle__slices-wrap--merge .fraction-circle__slice-group {
+  animation: slice-merge-pulse 0.65s ease forwards;
+}
+
+@keyframes slice-merge-pulse {
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.fraction-circle__sector-label {
+  font-size: 15px;
+  font-weight: 800;
+  fill: #1c2833;
+  pointer-events: none;
+}
+
+.fraction-circle__sector-label--compound {
+  font-size: 11px;
+}
+
+.fraction-circle__unit-label {
+  font-size: 12px;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.fraction-circle__unit-label--l1-left {
+  fill: #1a5276;
+}
+
+.fraction-circle__unit-label--l1-right {
+  fill: #935116;
+}
+
+.fraction-circle__unit-label--s0 {
+  fill: #1e6b52;
+}
+
+.fraction-circle__unit-label--s1 {
+  fill: #5b4a8a;
+}
+
+.fraction-circle__unit-label--s2 {
+  fill: #9c4a1a;
+}
+
+.fraction-circle__unit-label--s3 {
+  fill: #8a7020;
+}
+
+.fraction-circle__sector-label--s0 {
+  fill: #1e6b52;
+}
+
+.fraction-circle__sector-label--s1 {
+  fill: #5b4a8a;
+}
+
+.fraction-circle__sector-label--s2 {
+  fill: #9c4a1a;
+}
+
+.fraction-circle__sector-label--s3 {
+  fill: #8a7020;
+}
+
+.fraction-circle__subdivision-line {
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 2;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+.fraction-circle__unit-label--small {
+  font-size: 10px;
+}
+
+.fraction-circle__slice-line {
+  stroke: rgba(255, 255, 255, 0.85);
+  stroke-width: 1.5;
+  pointer-events: none;
+}
+
+.fraction-circle__slice-label {
+  font-size: 13px;
+  font-weight: 800;
+  fill: #1c2833;
+  pointer-events: none;
+  opacity: 0;
+  animation: slice-label-enter 0.55s ease forwards;
+}
+
+.fraction-circle__slice-label--left {
+  fill: #1a5276;
+}
+
+.fraction-circle__slice-label--right {
+  fill: #935116;
+}
+
+@keyframes slice-label-enter {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fraction-circle__stage--aligned .fraction-circle__slice-label {
+  animation:
+    slice-label-enter 0.55s ease forwards,
+    slice-label-glow 2s ease-in-out 0.6s infinite;
+}
+
+@keyframes slice-label-glow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.65;
+  }
+}
+
+.fraction-circle__partition-group {
+  pointer-events: none;
+}
+
+.fraction-circle__partition {
+  stroke-width: 5;
+  stroke-linecap: round;
+  pointer-events: none;
+  opacity: 0.95;
+}
+
+.fraction-circle[data-level='2'] .fraction-circle__partition {
+  stroke-width: 6;
+}
+
+.fraction-circle__partition--aligned {
+  stroke-width: 5;
+  opacity: 1;
+}
+
+.fraction-circle__partition--dragging {
+  stroke-width: 5;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.2));
+}
+
+.fraction-circle__divider {
+  stroke-width: 5;
+  stroke-linecap: round;
+  pointer-events: none;
+  transition: stroke 0.2s;
+}
+
+.fraction-circle__divider--dragging {
+  stroke-width: 6;
+  filter: drop-shadow(0 0 6px rgba(42, 157, 143, 0.55));
+}
+
+.fraction-circle__divider--aligned {
+  stroke: #1e8449;
+  stroke-width: 6;
+}
+
+.fraction-circle__handle {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: grab;
+  touch-action: none;
+  z-index: 2;
+}
+
+.fraction-circle__handle:active {
+  cursor: grabbing;
+}
+
+.fraction-circle__handle-knob {
+  display: block;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Soft friendly faces */
+.slice-face__glow {
+  fill: rgba(255, 255, 255, 0.55);
+  stroke: none;
+}
+
+.slice-face__eye {
+  fill: #4a5568;
+}
+
+.slice-face__cheer-eye {
+  fill: none;
+  stroke: #4a5568;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.slice-face__cheek {
+  fill: rgba(255, 160, 160, 0.45);
+}
+
+.slice-face__mouth {
+  stroke: #5c6b7a;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.slice-face--excited .slice-face__mouth {
+  stroke: #e07a5f;
+  stroke-width: 2.2;
+}
+
+.fraction-circle__equiv {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.fraction-circle__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.fraction-circle__tool,
+.fraction-circle__smash {
+  flex: 1 1 calc(50% - 0.25rem);
+  min-height: 48px;
+  border-radius: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  touch-action: manipulation;
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  cursor: pointer;
+}
+
+.fraction-circle__smash {
+  border: none;
+  background: var(--color-muted);
+  color: #fff;
+}
+
+.fraction-circle__smash--ready {
+  background: linear-gradient(135deg, #2a9d8f, #1e8449);
+}
+
+.fraction-circle__smash:disabled,
+.fraction-circle__tool:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}

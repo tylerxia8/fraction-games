@@ -1,0 +1,68 @@
+.racing-flag {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 7.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.racing-flag__pole {
+  width: 6px;
+  height: 6.5rem;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #4a4a4a, #1a1a1a 50%, #4a4a4a);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+.racing-flag__cloth {
+  position: relative;
+  width: 7.5rem;
+  height: 5rem;
+  margin-bottom: 1.25rem;
+  margin-left: -2px;
+  transform-origin: left center;
+  animation: racing-flag-wave 1.1s ease-in-out infinite;
+  filter: drop-shadow(2px 3px 6px rgba(0, 0, 0, 0.25));
+}
+
+.racing-flag__pattern {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #1a1a1a;
+  border-radius: 0 4px 4px 0;
+  background-color: #fff;
+  background-image:
+    linear-gradient(45deg, #111 25%, transparent 25%),
+    linear-gradient(-45deg, #111 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #111 75%),
+    linear-gradient(-45deg, transparent 75%, #111 75%);
+  background-size: 20px 20px;
+  background-position:
+    0 0,
+    0 10px,
+    10px -10px,
+    -10px 0;
+}
+
+@keyframes racing-flag-wave {
+  0%,
+  100% {
+    transform: rotate(-2deg) skewY(0deg);
+  }
+  25% {
+    transform: rotate(4deg) skewY(-6deg);
+  }
+  50% {
+    transform: rotate(-1deg) skewY(4deg);
+  }
+  75% {
+    transform: rotate(5deg) skewY(-4deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .racing-flag__cloth {
+    animation: none;
+    transform: rotate(2deg);
+  }
+}

@@ -1,0 +1,264 @@
+.gator-mouth {
+  display: block;
+  overflow: visible;
+}
+
+.gator-mouth--sm {
+  width: 56px;
+  height: 38px;
+}
+
+.gator-mouth--md {
+  width: 72px;
+  height: 48px;
+}
+
+.gator-mouth--lg {
+  width: 96px;
+  height: 64px;
+}
+
+.gator-mouth__jaw {
+  fill: #3d9970;
+  stroke: #1e5631;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.gator-mouth__eye {
+  fill: #f9e79f;
+  stroke: #1e5631;
+  stroke-width: 1.5;
+}
+
+.gator-mouth__pupil {
+  fill: #1c2833;
+}
+
+.gator-mouth__tooth {
+  stroke: #fff;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.gator-mouth__equals {
+  font-size: 28px;
+  font-weight: 800;
+  fill: #1e5631;
+}
+
+.gator-mouth__body {
+  fill: #52b788;
+  stroke: #1e5631;
+  stroke-width: 2;
+}
+
+.gator-mouth__jaw-open {
+  fill: #40916c;
+  stroke: #1e5631;
+  stroke-width: 2;
+}
+
+.gator-mouth__nostril {
+  fill: #1e5631;
+}
+
+.gator-mouth__symbol-bg {
+  fill: #e8f5e9;
+  stroke: #2d6a4f;
+  stroke-width: 2;
+}
+
+.gator-mouth__symbol-text {
+  font-size: 26px;
+  font-weight: 800;
+  fill: #1e5631;
+}
+
+.gator-mouth__symbol-fat {
+  fill: #3d9970;
+  stroke: #1e5631;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.gator-mouth__symbol-jaw-top {
+  fill: #52b788;
+  stroke: #1e5631;
+  stroke-width: 1.5;
+}
+
+.gator-mouth__symbol-jaw-bottom {
+  fill: #40916c;
+  stroke: #1e5631;
+  stroke-width: 1.5;
+}
+
+.gator-mouth__symbol-outline {
+  fill: #d8f3dc;
+  stroke: #1e5631;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.gator-mouth__jaw-top {
+  fill: #52b788;
+  stroke: #1e5631;
+  stroke-width: 2;
+}
+
+.gator-mouth__jaw-bottom {
+  fill: #40916c;
+  stroke: #1e5631;
+  stroke-width: 2;
+}
+
+.gator-mouth__tooth-fill {
+  fill: #fff;
+}
+
+.gator-mouth__smile {
+  stroke: #1e5631;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.gator-mouth__profile-snout {
+  fill: #52b788;
+  stroke: #1e5631;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.gator-mouth__equals-sign {
+  fill: #fff;
+  stroke: #1e5631;
+  stroke-width: 2;
+}
+
+/* —— Chomp animations (correct answer) —— */
+
+.gator-mouth--chomp {
+  animation: gator-mouth-pop 0.45s ease;
+}
+
+@keyframes gator-mouth-pop {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.12);
+  }
+  65% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1.04);
+  }
+}
+
+.gator-mouth--chomp .gator-mouth__jaw {
+  transform-origin: 30px 24px;
+  animation: gator-triangle-chomp 0.5s ease-in-out 2;
+}
+
+@keyframes gator-triangle-chomp {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.14);
+  }
+  55% {
+    transform: scale(1.06);
+  }
+}
+
+.gator-mouth--chomp .gator-mouth__symbol-jaw-top,
+.gator-mouth--chomp .gator-mouth__jaw-top {
+  transform-origin: 10px 24px;
+  animation: gator-jaw-top-chomp 0.45s ease-in-out 2;
+}
+
+.gator-mouth--chomp .gator-mouth__symbol-jaw-bottom,
+.gator-mouth--chomp .gator-mouth__jaw-bottom {
+  transform-origin: 10px 24px;
+  animation: gator-jaw-bottom-chomp 0.45s ease-in-out 2;
+}
+
+@keyframes gator-jaw-top-chomp {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(16deg);
+  }
+  55% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes gator-jaw-bottom-chomp {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(-16deg);
+  }
+  55% {
+    transform: rotate(-10deg);
+  }
+}
+
+.gator-mouth--chomp .gator-mouth__jaw-open {
+  transform-origin: 48px 28px;
+  animation: gator-friendly-chomp 0.5s ease-in-out 2;
+}
+
+@keyframes gator-friendly-chomp {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.2) translateX(4px);
+  }
+}
+
+.gator-mouth--chomp .gator-mouth__profile-snout {
+  transform-origin: 42px 26px;
+  animation: gator-profile-chomp 0.5s ease-in-out 2;
+}
+
+@keyframes gator-profile-chomp {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  40% {
+    transform: scaleX(1.15);
+  }
+}
+
+.gator-mouth--chomp-equal {
+  animation: gator-equal-happy 0.6s ease-in-out 2;
+}
+
+@keyframes gator-equal-happy {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.08) rotate(-4deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(4deg);
+  }
+  75% {
+    transform: scale(1.06) rotate(-2deg);
+  }
+}

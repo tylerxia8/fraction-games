@@ -1,0 +1,87 @@
+/* Planet Builder */
+
+.wedge-shell[data-game-theme='planet'] {
+  background: linear-gradient(180deg, #0b0d18 0%, #151a2e 50%, #1a1040 100%);
+}
+
+.wedge-shell[data-game-theme='planet'] .wedge-shell__header {
+  background: #151a2e;
+  border-bottom-color: #7b6cf6;
+}
+
+[data-game-theme='planet'].wedge-circle {
+  background: radial-gradient(ellipse at 50% 30%, #1e1638 0%, #0b0d18 65%);
+}
+
+[data-game-theme='planet'] .wedge-circle__teach {
+  background: rgba(123, 108, 246, 0.15);
+  border-bottom-color: #7b6cf6;
+}
+
+[data-game-theme='planet'] .wedge-circle__teach-text {
+  color: #e8e4ff;
+}
+
+[data-game-theme='planet'] .wedge-circle__planet-body {
+  filter: drop-shadow(0 0 12px rgba(126, 200, 240, 0.35));
+}
+
+[data-game-theme='planet'] .wedge-circle__planet-shine {
+  mix-blend-mode: screen;
+}
+
+[data-game-theme='planet'] .wedge-circle__rim {
+  fill: none;
+  stroke: #a8c4ff;
+  stroke-width: 4;
+  filter: drop-shadow(0 0 10px rgba(168, 196, 255, 0.55));
+}
+
+[data-game-theme='planet'] .wedge-circle__slice--l1-left,
+[data-game-theme='planet'] .wedge-circle__inserted--l1-left {
+  fill: #4a7c59;
+  stroke: #2d5a3d;
+}
+
+[data-game-theme='planet'] .wedge-circle__slice--l1-right,
+[data-game-theme='planet'] .wedge-circle__inserted--l1-right {
+  fill: #c4a35a;
+  stroke: #8b6914;
+}
+
+[data-game-theme='planet'] .wedge-circle__slice--s0 {
+  fill: #2a6eb8;
+}
+
+[data-game-theme='planet'] .wedge-circle__slice--s1 {
+  fill: #5c4d9e;
+}
+
+[data-game-theme='planet'] .wedge-circle__slice--s2 {
+  fill: #4a7c59;
+}
+
+[data-game-theme='planet'] .wedge-circle__slice--s3 {
+  fill: #c4a35a;
+}
+
+[data-game-theme='planet'] .wedge-circle__stage {
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(1px 1px at 60% 70%, rgba(255, 255, 255, 0.35), transparent),
+    radial-gradient(1px 1px at 80% 20%, rgba(255, 255, 255, 0.3), transparent);
+}
+
+[data-game-theme='planet'] .wedge-circle__gap {
+  stroke: #7b6cf6;
+  fill: rgba(92, 77, 158, 0.2);
+}
+
+[data-game-theme='planet'] .wedge-circle__smash--ready,
+[data-game-theme='planet'] .wedge-circle__continue {
+  background: linear-gradient(135deg, #5c4d9e, #7b6cf6);
+}
+
+[data-game-theme='planet'] .wedge-level-menu__sub {
+  color: var(--color-muted);
+}

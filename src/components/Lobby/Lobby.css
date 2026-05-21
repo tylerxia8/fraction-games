@@ -1,0 +1,116 @@
+.lobby {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+  background: var(--color-bg);
+}
+
+.lobby__header {
+  padding: 1.25rem 1rem 0.5rem;
+  text-align: center;
+}
+
+.lobby__title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.lobby__sub {
+  margin: 0.5rem auto 0;
+  max-width: 22rem;
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  line-height: 1.45;
+}
+
+.lobby__grid {
+  list-style: none;
+  margin: 0;
+  padding: 1.25rem 1rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  max-width: 720px;
+  width: 100%;
+  align-self: center;
+  flex: 1;
+  align-content: start;
+}
+
+.lobby__tile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  width: 100%;
+  min-height: 180px;
+  padding: 1.15rem 1.2rem;
+  border: 3px solid var(--tile-accent, var(--color-accent));
+  border-radius: 1.1rem;
+  background: var(--color-surface);
+  text-align: left;
+  cursor: pointer;
+  touch-action: manipulation;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.lobby__tile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.lobby__tile:active {
+  transform: translateY(0);
+}
+
+.lobby__tile-icon {
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--tile-accent, var(--color-accent));
+}
+
+.lobby__tile-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.lobby__tile-sub {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--tile-accent, var(--color-accent));
+}
+
+.lobby__tile-desc {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--color-muted);
+  flex: 1;
+}
+
+.lobby__tile-badge {
+  margin-top: 0.25rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--color-bg);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-muted);
+}
+
+@media (min-width: 600px) {
+  .lobby__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
