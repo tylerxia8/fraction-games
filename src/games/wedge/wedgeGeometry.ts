@@ -54,16 +54,27 @@ export function pointerOverGap(
   return angleInArc(angle, gap.startDeg, gap.endDeg);
 }
 
+/** Where fraction labels (1/6, 1/4, …) are drawn — use as drag anchor. */
 export function gapMidpoint(gap: WedgePiece): { x: number; y: number } {
   let mid = (gap.startDeg + gap.endDeg) / 2;
   if (gap.endDeg < gap.startDeg) mid = (gap.startDeg + gap.endDeg + 360) / 2;
-  if (mid > 360) mid -= 360;
+  if (mid >= 360) mid -= 360;
   const rad = (mid * Math.PI) / 180;
-  const labelR = gap.innerR ? (gap.innerR + R) / 2 : 52;
+  const labelR = gap.innerR ? (gap.innerR + R) / 2 : R * 0.59;
   return {
     x: CX + labelR * Math.cos(rad),
     y: CY + labelR * Math.sin(rad),
   };
+}
+
+/** Pixel offset from float top-left to the label anchor (viewBox 0–200). */
+export function wedgeDragAnchorScreenOffset(
+  piece: WedgePiece,
+  displaySize: number,
+): { x: number; y: number } {
+  const anchor = gapMidpoint(piece);
+  const scale = displaySize / 200;
+  return { x: anchor.x * scale, y: anchor.y * scale };
 }
 
 export function sliceCssClass(level: 1 | 2, slice: CircleSlice): string {

@@ -6,6 +6,7 @@ import { WedgeCircle } from './WedgeCircle';
 import { WedgeLevelMenu } from './WedgeLevelMenu';
 import { useWedgePuzzle } from './useWedgePuzzle';
 import './WedgeGameShell.css';
+import './WedgeLevelMenu.css';
 import './themes/planet.css';
 
 type WedgeGameShellProps = {

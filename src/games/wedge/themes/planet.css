@@ -9,6 +9,19 @@
   border-bottom-color: #7b6cf6;
 }
 
+.wedge-shell[data-game-theme='planet'] .wedge-shell__header h1 {
+  color: #5c4d9e;
+}
+
+.wedge-shell[data-game-theme='planet'] .wedge-shell__phase {
+  color: #5c4d9e;
+}
+
+.wedge-shell[data-game-theme='planet'] .wedge-level-menu__title,
+.wedge-shell[data-game-theme='planet'] .wedge-level-menu__sub {
+  color: #5c4d9e;
+}
+
 [data-game-theme='planet'].wedge-circle {
   background: radial-gradient(ellipse at 50% 30%, #1e1638 0%, #0b0d18 65%);
 }
@@ -57,6 +70,14 @@
   fill: #5c4d9e;
 }
 
+[data-game-theme='planet'] .wedge-circle[data-level='2'] .wedge-circle__unit-label--l2-0 {
+  fill: #153d66;
+}
+
+[data-game-theme='planet'] .wedge-circle[data-level='2'] .wedge-circle__unit-label--l2-1 {
+  fill: #2e2450;
+}
+
 [data-game-theme='planet'] .wedge-circle__slice--s2 {
   fill: #4a7c59;
 }
@@ -82,6 +103,3 @@
   background: linear-gradient(135deg, #5c4d9e, #7b6cf6);
 }
 
-[data-game-theme='planet'] .wedge-level-menu__sub {
-  color: var(--color-muted);
-}

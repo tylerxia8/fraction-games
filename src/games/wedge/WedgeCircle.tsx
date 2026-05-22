@@ -11,6 +11,7 @@ import {
   gapCssClass,
   gapMidpoint,
   pointerOverGap,
+  wedgeDragAnchorScreenOffset,
   wedgePieceSliceClasses,
   wedgePieceViewBox,
 } from './wedgeGeometry';
@@ -118,9 +119,10 @@ export function WedgeCircle({
   if (isDragging && dragPos && activePiece && stageRef.current) {
     const stageRect = stageRef.current.getBoundingClientRect();
     const svgWidth = svgRef.current?.getBoundingClientRect().width ?? 280;
+    const anchor = wedgeDragAnchorScreenOffset(activePiece, svgWidth);
     floatStyle = {
-      left: dragPos.x - stageRect.left - svgWidth / 2,
-      top: dragPos.y - stageRect.top - svgWidth / 2,
+      left: dragPos.x - stageRect.left - anchor.x,
+      top: dragPos.y - stageRect.top - anchor.y,
       width: svgWidth,
       height: svgWidth,
     };
@@ -357,6 +359,17 @@ export function WedgeCircle({
                 )}
                 className={wedgePieceSliceClasses(level, activePiece)}
               />
+              {activePiece.label ? (
+                <text
+                  x={gapMidpoint(activePiece).x}
+                  y={gapMidpoint(activePiece).y}
+                  className={`wedge-circle__unit-label wedge-circle__unit-label--l${level}-${activePiece.section}`}
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                >
+                  {activePiece.label}
+                </text>
+              ) : null}
             </svg>
           </div>
         )}
