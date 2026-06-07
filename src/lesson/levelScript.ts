@@ -66,7 +66,7 @@ const level1 = base({
     advanceOn: 'choice',
     tapMode: true,
     correctTapSections: [1],
-    onCorrect: 'complete',
+    onCorrect: 'check_q4',
     onIncorrect: 'check_q3_wrong',
   },
   check_q3_wrong: {
@@ -75,8 +75,30 @@ const level1 = base({
     advanceOn: 'choice',
     tapMode: true,
     correctTapSections: [1],
-    onCorrect: 'complete',
+    onCorrect: 'check_q4',
     onIncorrect: 'check_q3_wrong',
+  },
+  check_q4: {
+    id: 'check_q4',
+    message: 'Synced! Two 1/4 sectors on the right are the same shield size as…',
+    advanceOn: 'choice',
+    choices: [
+      { id: 'three_sixths', label: 'Three 1/6 sectors on the left', correct: true },
+      { id: 'two_sixths', label: 'Two 1/6 sectors on the left', correct: false },
+      { id: 'one_quarter', label: 'Just one 1/4 sector', correct: false },
+    ],
+    onCorrect: 'complete',
+    onIncorrect: 'check_q4_wrong',
+  },
+  check_q4_wrong: {
+    id: 'check_q4_wrong',
+    message: '2 × 1/4 = 1/2 and 3 × 1/6 = 1/2 — same half, same shield power!',
+    advanceOn: 'choice',
+    choices: [
+      { id: 'three_sixths', label: 'Three 1/6 sectors on the left', correct: true },
+    ],
+    onCorrect: 'complete',
+    onIncorrect: 'check_q4_wrong',
   },
   complete: {
     id: 'complete',
@@ -147,7 +169,7 @@ const level2 = base({
     advanceOn: 'choice',
     tapMode: true,
     correctTapIds: ['q4-sixth', 'q4-twelfth'],
-    onCorrect: 'complete',
+    onCorrect: 'check_q4',
     onIncorrect: 'check_q3_wrong',
   },
   check_q3_wrong: {
@@ -156,8 +178,31 @@ const level2 = base({
     advanceOn: 'choice',
     tapMode: true,
     correctTapIds: ['q4-sixth', 'q4-twelfth'],
-    onCorrect: 'complete',
+    onCorrect: 'check_q4',
     onIncorrect: 'check_q3_wrong',
+  },
+  check_q4: {
+    id: 'check_q4',
+    message:
+      'Synced! A 1/6 beam plus a 1/12 beam in the yellow zone are the same shield size as…',
+    advanceOn: 'choice',
+    choices: [
+      { id: 'quarter_sector', label: 'One 1/4 sector (green wedge at top)', correct: true },
+      { id: 'eighth_sector', label: 'One 1/8 sector (purple zone)', correct: false },
+      { id: 'two_twelfths', label: 'Two 1/12 sectors only', correct: false },
+    ],
+    onCorrect: 'complete',
+    onIncorrect: 'check_q4_wrong',
+  },
+  check_q4_wrong: {
+    id: 'check_q4_wrong',
+    message: '1/6 + 1/12 = 3/12 = 1/4 — same shield charge as the green wedge!',
+    advanceOn: 'choice',
+    choices: [
+      { id: 'quarter_sector', label: 'One 1/4 sector (green wedge at top)', correct: true },
+    ],
+    onCorrect: 'complete',
+    onIncorrect: 'check_q4_wrong',
   },
   complete: {
     id: 'complete',

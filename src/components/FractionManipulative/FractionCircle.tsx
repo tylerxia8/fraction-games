@@ -57,19 +57,19 @@ function unitLabelClass(level: GameLevel, slice: CircleSlice): string {
 function HandleArrowRing() {
   const rotations = [0, 90, 180, 270];
   return (
-    <svg className="fraction-circle__handle-arrows" viewBox="0 0 80 80" aria-hidden>
+    <svg className="fraction-circle__handle-arrows" viewBox="0 0 64 64" aria-hidden>
       {rotations.map((rotation) => (
-        <g key={rotation} transform={`rotate(${rotation} 40 40)`}>
+        <g key={rotation} transform={`rotate(${rotation} 32 32)`}>
           <path
             className="fraction-circle__handle-arrow-arc"
-            d="M 40 11 A 29 29 0 0 1 61 29"
+            d="M 32 12 A 20 20 0 0 1 46 24"
             fill="none"
             strokeWidth="2.5"
             strokeLinecap="round"
           />
           <path
             className="fraction-circle__handle-arrow-head"
-            d="M 61 29 L 55 27 M 61 29 L 57 34"
+            d="M 46 24 L 42 22 M 46 24 L 43 28"
             fill="none"
             strokeWidth="2.5"
             strokeLinecap="round"
@@ -197,15 +197,16 @@ export function FractionCircle({
 
   return (
     <section
-      className="fraction-circle"
+      className={[
+        'fraction-circle',
+        showChoices && 'fraction-circle--has-choices',
+      ]
+        .filter(Boolean)
+        .join(' ')}
       aria-label={`Level ${level} laser align mission`}
       data-level={level}
       data-game-theme="laser"
     >
-      <div className="fraction-circle__teach" role="status" aria-live="polite">
-        <p className="fraction-circle__teach-text">{message}</p>
-      </div>
-
       <div
         className={[
           'fraction-circle__stage',
@@ -220,6 +221,7 @@ export function FractionCircle({
       >
         <SmashEffects active={smashed} merging={smashMerging} />
 
+        <div className="fraction-circle__canvas">
         <svg
           ref={svgRef}
           viewBox="0 0 200 200"
@@ -324,15 +326,26 @@ export function FractionCircle({
             />
           </button>
         )}
+        </div>
+
+        {complete && step.id === 'explore_smash' && (
+          <p className="fraction-circle__equiv" aria-hidden>
+            {meta.equiv}
+          </p>
+        )}
+
+        <div className="fraction-circle__stage-gap" aria-hidden />
       </div>
 
-      {complete && step.id === 'explore_smash' && (
-        <p className="fraction-circle__equiv" aria-hidden>
-          {meta.equiv}
-        </p>
-      )}
+      <div className="fraction-circle__dock">
+        <div className="fraction-circle__prompt" role="status" aria-live="polite">
+          <p className="fraction-circle__prompt-text">{message}</p>
+          {tapMode && !showChoices && (
+            <p className="fraction-circle__tap-hint">Tap a sector on the shield above</p>
+          )}
+        </div>
 
-      <div className="fraction-circle__actions">
+        <div className="fraction-circle__actions">
         {showChoices &&
           step.choices!.map((choice) => (
             <button
@@ -369,6 +382,7 @@ export function FractionCircle({
                 : LASER_COPY.smashReady}
           </button>
         )}
+        </div>
       </div>
     </section>
   );
