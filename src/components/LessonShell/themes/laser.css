@@ -9,6 +9,24 @@
   border-bottom-color: #00b4d8;
 }
 
+.lesson-shell[data-game-theme='laser'] .lesson-shell__header h1 {
+  color: #f0f7ff;
+}
+
+.lesson-shell[data-game-theme='laser'] .lesson-shell__back {
+  color: #e8f4ff;
+  border-color: rgba(0, 180, 216, 0.45);
+  background: rgba(0, 180, 216, 0.12);
+}
+
+.lesson-shell[data-game-theme='laser'] .level-menu__title {
+  color: #f0f7ff;
+}
+
+.lesson-shell[data-game-theme='laser'] .level-menu__sub {
+  color: #c5d9e8;
+}
+
 .lesson-shell[data-game-theme='laser'] .lesson-shell__phase {
   background: rgba(0, 180, 216, 0.15);
   color: #00e5ff;
@@ -48,11 +66,26 @@
   box-shadow: 0 0 12px rgba(0, 229, 255, 0.6);
 }
 
+[data-game-theme='laser'] .fraction-circle__handle-arrow-arc,
+[data-game-theme='laser'] .fraction-circle__handle-arrow-head {
+  stroke: #00e5ff;
+  filter: drop-shadow(0 0 3px rgba(0, 229, 255, 0.55));
+}
+
 [data-game-theme='laser'] .fraction-circle__smash--ready {
   background: linear-gradient(135deg, #0077b6, #00b4d8);
 }
 
-[data-game-theme='laser'] .fraction-circle__tool {
-  border-color: #00b4d8;
-  color: #00b4d8;
+[data-game-theme='laser'] .fraction-circle__stage--tap-quiz .fraction-circle__slice--tappable {
+  animation: laser-tap-glow 2.2s ease-in-out infinite;
+}
+
+@keyframes laser-tap-glow {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.08);
+  }
 }

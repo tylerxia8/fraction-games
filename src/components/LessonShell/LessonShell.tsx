@@ -8,6 +8,7 @@ import {
   phaseForStep,
   SMASH_LINES,
   SNAP_GOAL_LINES,
+  isTapCorrect,
 } from '../../lesson/levelScript';
 import { getLobbyGame } from '../../lobby/games';
 import { LASER_COPY } from '../../lobby/gameThemes';
@@ -66,18 +67,28 @@ export function LessonShell({ onBackToLobby }: LessonShellProps) {
   }, [stepId, circle.isEquivalent]);
 
   useEffect(() => {
+    if (stepId === 'explore_intro' && circle.complete && !circle.isDragging) {
+      setFlashMessage(SNAP_GOAL_LINES[level]);
+    }
+  }, [stepId, circle.complete, circle.isDragging, level]);
+
+  useEffect(() => {
     if (stepId === 'explore_smash' && circle.smashed) {
       const t = window.setTimeout(() => setStepId('instruct'), 1100);
       return () => window.clearTimeout(t);
     }
   }, [stepId, circle.smashed]);
 
-  const startLevel = useCallback((next: GameLevel) => {
-    setLevel(next);
-    setStepId('explore_intro');
-    setFlashMessage(null);
-    setScreen('play');
-  }, []);
+  const startLevel = useCallback(
+    (next: GameLevel) => {
+      circle.reset(next);
+      setLevel(next);
+      setStepId('explore_intro');
+      setFlashMessage(null);
+      setScreen('play');
+    },
+    [circle],
+  );
 
   const goToStep = useCallback((nextId: string) => {
     setStepId(nextId);
@@ -110,10 +121,15 @@ export function LessonShell({ onBackToLobby }: LessonShellProps) {
     [step, goToStep],
   );
 
-  const handleSnapGoal = useCallback(() => {
-    setFlashMessage(SNAP_GOAL_LINES[level]);
-    circle.snapToGoalPosition();
-  }, [circle, level]);
+  const handleSliceTap = useCallback(
+    (sliceId: string, section: number) => {
+      if (!step.tapMode) return;
+      const correct = isTapCorrect(step, sliceId, section);
+      const nextId = correct ? step.onCorrect : step.onIncorrect;
+      if (nextId) goToStep(nextId);
+    },
+    [step, goToStep],
+  );
 
   const handleSmash = useCallback(() => {
     setFlashMessage(SMASH_LINES[level]);
@@ -173,9 +189,9 @@ export function LessonShell({ onBackToLobby }: LessonShellProps) {
             onAngleChange={circle.setAngleFromDrag}
             onDragStart={circle.startDrag}
             onDragEnd={circle.endDrag}
-            onSnapGoal={handleSnapGoal}
             onSmash={handleSmash}
             onChoice={handleChoice}
+            onSliceTap={handleSliceTap}
             onContinue={handleContinue}
           />
         )}

@@ -5,7 +5,6 @@ import {
   isLevelComplete,
   isOnSliceBoundary,
   snapDivider,
-  snapToGoal,
 } from './circleGeometry';
 import { playSmashThunk, playSnapClick } from './sounds';
 
@@ -54,12 +53,6 @@ export function useCircleFraction(level: GameLevel) {
     setIsDragging(true);
   }, []);
 
-  const snapToGoalPosition = useCallback(() => {
-    setDividerAngle((a) => snapToGoal(level, a));
-    setSmashed(false);
-    pulseSnap();
-  }, [level, pulseSnap]);
-
   const smash = useCallback(() => {
     if (!isEquivalent) return;
     setSmashMerging(true);
@@ -73,8 +66,9 @@ export function useCircleFraction(level: GameLevel) {
     }, 650);
   }, [isEquivalent]);
 
-  const reset = useCallback(() => {
-    setDividerAngle(initialDividerAngle(level));
+  const reset = useCallback((overrideLevel?: GameLevel) => {
+    const l = overrideLevel ?? level;
+    setDividerAngle(initialDividerAngle(l));
     setIsDragging(false);
     setSmashed(false);
     setSmashMerging(false);
@@ -93,7 +87,6 @@ export function useCircleFraction(level: GameLevel) {
     setAngleFromDrag,
     endDrag,
     startDrag,
-    snapToGoalPosition,
     smash,
     reset,
   };

@@ -4,8 +4,7 @@ One-week prototype: scripted chat tutor + interactive fraction manipulative for 
 
 ## Live demo
 
-<!-- TODO: deploy and paste URL -->
-_TBD — deploy to Vercel / Netlify / etc._
+**https://tylerxia8.github.io/fraction-games/**
 
 ## Demo video
 

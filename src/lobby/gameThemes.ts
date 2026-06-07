@@ -2,12 +2,11 @@ import type { GameLevel } from '../lesson/levels';
 
 /** Slicer — Laser Align */
 export const LASER_COPY = {
-  levelMenuSub: 'Two missions — align the laser, then sync the shield.',
-  exploreHintL1: 'Drag the laser arm along the grid. Line it up straight through the middle.',
-  exploreHintL2: 'Move the laser to the top, right, bottom, or left — four lock positions.',
-  snapReady: 'Beams aligned ✓',
-  snapL1: 'Align Laser',
-  snapL2: 'Lock Beams',
+  levelMenuSub: 'Two missions — drag the laser dot, sync the shield, pass the scans.',
+  exploreHintL1:
+    'Press the glowing circle and drag it around the rim. Line the laser straight through the middle!',
+  exploreHintL2:
+    'Press the glowing circle and drag it around the rim. Lock the laser at top, right, bottom, or left.',
   smashReady: 'Sync Shield!',
   smashMerging: 'Syncing…',
   smashed: 'Shield synced!',

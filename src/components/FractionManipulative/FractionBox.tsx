@@ -17,9 +17,9 @@ type FractionBoxProps = {
   onAngleChange: (angle: number) => void;
   onDragStart: () => void;
   onDragEnd: () => void;
-  onSnapGoal: () => void;
   onSmash: () => void;
   onChoice: (choiceId: string) => void;
+  onSliceTap: (sliceId: string, section: number) => void;
   onContinue: () => void;
 };
 

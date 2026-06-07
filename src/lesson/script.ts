@@ -18,4 +18,8 @@ export type ScriptStep = {
   onCorrect?: string;
   onIncorrect?: string;
   showSmash?: boolean;
+  /** Tap slices on the circle to answer (check phase). */
+  tapMode?: boolean;
+  correctTapIds?: string[];
+  correctTapSections?: number[];
 };

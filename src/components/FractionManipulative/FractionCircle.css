@@ -372,28 +372,102 @@
 .fraction-circle__handle {
   position: absolute;
   transform: translate(-50%, -50%);
-  width: 56px;
-  height: 56px;
+  width: 80px;
+  height: 80px;
   padding: 0;
   border: none;
   background: transparent;
   cursor: grab;
   touch-action: none;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.fraction-circle__handle:active {
+.fraction-circle__handle:active,
+.fraction-circle__handle--dragging {
   cursor: grabbing;
 }
 
+.fraction-circle__handle-arrows {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  animation: handle-arrows-spin 5s linear infinite;
+}
+
+.fraction-circle__handle-arrow-arc,
+.fraction-circle__handle-arrow-head {
+  stroke: #00b4d8;
+}
+
+.fraction-circle__handle--dragging .fraction-circle__handle-arrows {
+  opacity: 0;
+}
+
+@keyframes handle-arrows-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fraction-circle__handle--dragging .fraction-circle__handle-knob {
+  transform: scale(1.12);
+}
+
 .fraction-circle__handle-knob {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 44px;
   height: 44px;
-  margin: 0 auto;
+  flex-shrink: 0;
   border-radius: 50%;
   border: 4px solid #fff;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.fraction-circle__handle--hint .fraction-circle__handle-knob {
+  animation: handle-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes handle-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(0, 180, 216, 0.5);
+  }
+  50% {
+    transform: scale(1.12);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.85);
+  }
+}
+
+.fraction-circle__stage--tap-quiz .fraction-circle__slice--tappable {
+  cursor: pointer;
+  stroke: rgba(255, 255, 255, 0.35);
+  stroke-width: 2;
+}
+
+.fraction-circle__stage--tap-quiz .fraction-circle__slice--tappable:focus-visible {
+  outline: 3px solid #00e5ff;
+  outline-offset: 1px;
+}
+
+.fraction-circle__stage--tap-quiz .fraction-circle__slice--tappable:active {
+  filter: brightness(1.15);
+}
+
+.fraction-circle__smash--solo {
+  flex: 1 1 100%;
+  min-height: 52px;
+  font-size: 1.05rem;
 }
 
 /* Soft friendly faces */
